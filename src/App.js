@@ -37,9 +37,31 @@ function App() {
           console.log(error);
       });
     }
+
+
+    const mydetail = () => {
+      let config = {
+        methid: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://dating-backend-production-f622.up.railway.app/mydetails',
+        withCredentials: true,
+  
+      }
+  
+      axios.request(config)
+        .then((res) => {
+          console.log("res mydetails", res);
+        })
+        .catch((error) => {
+          console.log("error mydetails", error)
+        })
+    }
   return (
     <div className="App">
       <button onClick={onSubmit}>Submit</button>
+
+      <button onClick={mydetail}>mydetails</button>
+
     </div>
   );
 }
